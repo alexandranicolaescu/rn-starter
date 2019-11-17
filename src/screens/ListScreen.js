@@ -2,15 +2,15 @@ import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 
 const ListScreen = () => {
-    const Friends = [
-        {name: 'Friend #1', age: 20},
-        {name: 'Friend #2', age: 45},
-        {name: 'Friend #3', age: 32},
-        {name: 'Friend #4', age: 27},
-        {name: 'Friend #5', age: 53},
-        {name: 'Friend #6', age: 21},
-        {name: 'Friend #7', age: 30},
-        {name: 'Friend #8', age: 8},
+    const ToDo = [
+        {name: 'Kiss', level: 1},
+        {name: 'Adam', level: 2},
+        {name: 'A.K.A.', level: 3},
+        {name: 'Goojy-', level: 4},
+        {name: 'Boo-', level: 5},
+        {name: 'Boo', level: 6},
+        {name: 'Right', level: 7},
+        {name: 'Now', level: 8},
         
     ];
 
@@ -19,10 +19,10 @@ const ListScreen = () => {
         <FlatList 
             // horizontal = {true}
             //showsHorizontalScrollIndicator = {false}                  //ascunzi bara de navigare de jos
-            keyExtractor = {friend => friend.name}
-            data = {Friends}
+            keyExtractor = {task => task.name}
+            data = {ToDo}
             renderItem = { ({item}) => {  
-                return <Text style = {styles.textStyle}> {item.name} Age - {item.age}</Text>
+                return <Text style = {styles.textStyle}> {item.name} Level - {item.level}</Text>
                       
                 
                  //renderItem = { (element) => {} } 
