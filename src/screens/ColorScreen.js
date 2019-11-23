@@ -1,30 +1,33 @@
-import React, {useState} from 'react';
-import { View, StyleSheet, Text, Button } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import React, {useState} from 'react'
+import {View, Text, StyleSheet, Button} from 'react-native'
 
 const ColorScreen = () => {
-    const [color, SetColors] = useState([]);
+    const [colors, setColors] = useState([]);
     console.log(colors);
 
-    return (
+    return(
         <View>
             <Button 
-                title = "Add a Color"
+                title ="Add a Color"
                 onPress = {() => {
-                    SetColors([...colors, randomRgb()]);
-                }} 
+                    setColors([...colors, randomRbg()]);
+
+                }}
             />
+
             <View 
-                style = {{ height: 100, width: 100, backgroundColor: randomRgb() }} 
+                style = {{height: 100, width: 100, backgroundColor: randomRbg()} }
             />
         </View>
-    );
-};
 
-const randomRgb = () => {
-    const red = Math.floor(Math.random() *256);
-    const green = Math.floor(Math.random() *256);
-    const blue = Math.floor(Math.random() *256);
+    );
+
+}
+
+const randomRbg = () => {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
 
     return `rgb(${red}, ${green}, ${blue})`;
 };
